@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mannya Agarwal · Product Manager, AI</title>
+<style>
+:root{--bg:#FFF8EC;--ink:#1B1F3B;--coral:#FF6B57;--sun:#FFC93C;--mint:#2EC4A6;--violet:#7B61FF;--sky:#4CC9F0;--card:#fff;--mono:ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:17px/1.6 "Avenir Next",Inter,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+h1,h2,h3{line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(30px,5vw,44px);margin-bottom:8px}
+.tag{font-family:var(--mono);font-size:13px;color:var(--violet);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;display:block}
+.sub{opacity:.75;max-width:640px;margin-bottom:32px}
+.card{background:var(--card);border:2.5px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);padding:24px}
+nav{position:sticky;top:0;z-index:9;background:var(--bg);border-bottom:2.5px solid var(--ink)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+nav b{font-family:var(--mono)}
+nav div a{margin-left:20px;text-decoration:none;font-weight:600;font-size:15px}
+nav div a:hover{color:var(--coral)}
+@media(max-width:700px){nav div a:not(:last-child){display:none}}
+/* hero */
+.hero{padding-top:64px}
+.hero .grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+@media(max-width:800px){.hero .grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(44px,8vw,84px)}
+.hl{background:linear-gradient(transparent 58%,var(--sun) 58%)}
+.hero p{font-size:20px;margin:20px 0 28px;max-width:560px}
+.btn{display:inline-block;padding:12px 22px;border:2.5px solid var(--ink);border-radius:999px;font-weight:700;text-decoration:none;background:var(--coral);color:#fff;box-shadow:4px 4px 0 var(--ink);transition:.15s;margin:0 10px 10px 0}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:#fff;color:var(--ink)}
+.term{font-family:var(--mono);font-size:14px;background:var(--ink);color:#e8ebff;border-radius:14px;padding:0;overflow:hidden;border:2.5px solid var(--ink);box-shadow:6px 6px 0 var(--coral)}
+.term .bar{background:#2b3060;padding:8px 14px;display:flex;gap:7px}
+.term .bar i{width:11px;height:11px;border-radius:50%;display:block}
+.term pre{padding:16px 18px;white-space:pre-wrap}
+.k{color:var(--sun)}.s{color:var(--mint)}.c{color:#8f95c9}
+.cur{display:inline-block;width:8px;height:15px;background:var(--mint);vertical-align:-2px;animation:b 1s steps(1) infinite}
+@keyframes b{50%{opacity:0}}
+/* drum pads */
+.pads{margin-top:28px}
+.pads small{font-family:var(--mono);display:block;margin-bottom:8px;opacity:.7}
+.padrow{display:flex;gap:10px}
+.pad{width:64px;height:64px;border-radius:14px;border:2.5px solid var(--ink);font-family:var(--mono);font-weight:700;cursor:pointer;box-shadow:3px 3px 0 var(--ink);color:var(--ink);transition:.08s}
+.pad:active,.pad.hit{transform:translate(3px,3px) scale(.96);box-shadow:0 0 0 var(--ink)}
+/* strip */
+.strip{background:var(--ink);color:#fff;padding:22px 0;overflow:hidden;white-space:nowrap;font-family:var(--mono)}
+.strip div{display:inline-block;animation:m 28s linear infinite}
+.strip span{margin:0 28px}.strip em{color:var(--sun);font-style:normal}
+@keyframes m{to{transform:translateX(-50%)}}
+/* reaction timeline */
+.rx{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;position:relative}
+.rx .card h3{font-size:20px;margin:6px 0}
+.rx .card p{font-size:15px;opacity:.85}
+.rx .n{font-family:var(--mono);font-size:12px;padding:3px 10px;border-radius:99px;border:2px solid var(--ink)}
+/* periodic skills */
+.pt{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:12px}
+.el{border:2.5px solid var(--ink);border-radius:12px;padding:8px 10px;cursor:default;transition:.15s;min-height:104px;box-shadow:3px 3px 0 var(--ink)}
+.el:hover{transform:translateY(-4px) rotate(-1.5deg)}
+.el b{font-size:30px;display:block;line-height:1.1}
+.el small{font-family:var(--mono);font-size:10px}
+.el span{font-size:12px;display:block;line-height:1.2;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:20px;font-family:var(--mono);font-size:12px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;border:2px solid var(--ink);margin-right:6px;vertical-align:-1px}
+/* try-on */
+.pipe{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch;margin-bottom:28px}
+.step{flex:1;min-width:170px;border:2.5px solid var(--ink);border-radius:14px;padding:14px;background:#fff;position:relative}
+.step b{font-family:var(--mono);font-size:12px;color:var(--violet)}
+.step h4{font-size:17px;margin:2px 0 4px}
+.step p{font-size:14px;opacity:.8;line-height:1.4}
+.step.act{background:var(--sun)}
+.cmp{position:relative;aspect-ratio:3/4;max-width:420px;margin:0 auto;overflow:hidden;border:2.5px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);user-select:none;touch-action:none;background:#eee}
+.cmp .layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--mono);font-size:14px;padding:20px}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.cmp .in{background:repeating-linear-gradient(45deg,#e9e4ff,#e9e4ff 12px,#f6f3ff 12px,#f6f3ff 24px)}
+.cmp .out{background:repeating-linear-gradient(45deg,#ffe3dd,#ffe3dd 12px,#fff3f0 12px,#fff3f0 24px);clip-path:inset(0 0 0 50%)}
+.cmp .lab{position:absolute;top:12px;padding:4px 10px;background:var(--ink);color:#fff;border-radius:99px;font-family:var(--mono);font-size:11px;z-index:2}
+.cmp .handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--ink);z-index:3;cursor:ew-resize}
+.cmp .handle::after{content:"↔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:var(--sun);border:2.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-weight:700}
+.tryrow{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+@media(max-width:800px){.tryrow{grid-template-columns:1fr}}
+.chips span{display:inline-block;margin:0 8px 8px 0;padding:6px 14px;border:2px solid var(--ink);border-radius:99px;font-size:14px;font-weight:600;cursor:pointer;user-select:none;box-shadow:2px 2px 0 var(--ink);transition:.08s}
+.chips span:active{transform:translate(2px,2px);box-shadow:none}
+/* projects + exp */
+.soon{border-style:dashed;text-align:center;opacity:.8}
+.xp{display:grid;gap:22px}
+.xp .card h3{font-size:22px}
+.xp .meta{font-family:var(--mono);font-size:13px;opacity:.7;margin:2px 0 10px}
+.xp ul{padding-left:20px}.xp li{margin-bottom:6px;font-size:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+footer{background:var(--ink);color:#fff;padding:56px 0;text-align:center}
+footer h2{margin-bottom:16px}
+footer .btn.alt{color:var(--ink)}
+footer small{display:block;margin-top:24px;font-family:var(--mono);opacity:.6}
+.reveal{opacity:0;transform:translateY(24px);transition:.6s}
+.reveal.on{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>mannya<span style="color:var(--coral)">.</span>pm</b>
+<div><a href="#story">Story</a><a href="#tryon">Try-on</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="hero"><div class="wrap grid">
+<div>
+<span class="tag">Product Manager · Agentic AI · Bengaluru</span>
+<h1>Hi, I'm <span class="hl">Mannya.</span></h1>
+<p>Chemical engineer turned product manager. I take 0→1 AI products from a blank doc to something people actually use, and I'm happy talking evals and failure modes with the engineers building them.</p>
+<a class="btn" href="#tryon">See the try-on build</a><a class="btn alt" href="Mannya_Agarwal_Resume.pdf" download>Résumé ↓</a>
+<div class="pads"><small>// self-taught drummer. press a pad (or keys A S D F)</small>
+<div class="padrow">
+<button class="pad" data-k="a" style="background:var(--coral)">A<br>kick</button>
+<button class="pad" data-k="s" style="background:var(--sun)">S<br>snare</button>
+<button class="pad" data-k="d" style="background:var(--mint)">D<br>hat</button>
+<button class="pad" data-k="f" style="background:var(--sky)">F<br>crash</button>
+</div></div>
+</div>
+<div class="term"><div class="bar"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i></div>
+<pre id="term"></pre></div>
+</div></header>
+
+<div class="strip"><div id="strip"></div></div>
+
+<section id="story"><div class="wrap reveal">
+<span class="tag">The reaction</span>
+<h2>From beakers to bots</h2>
+<p class="sub">IIT Delhi taught me to model messy systems. Design minor taught me to care how they feel. ML taught me how they fail. Product is where all three react.</p>
+<div class="rx">
+<div class="card"><span class="n" style="background:var(--sky)">2020–24</span><h3>IIT Delhi</h3><p>B.Tech Chemical Engineering, Minor in Design, ML &amp; Statistics specialisation.</p></div>
+<div class="card"><span class="n" style="background:var(--mint)">2023–24</span><h3>Promotions &amp; Offers</h3><p>Config-driven infrastructure for bank deals and seller subsidies at big-sale scale. Killed manual spreadsheets.</p></div>
+<div class="card"><span class="n" style="background:var(--sun)">2024–25</span><h3>SLAP &amp; StyleDrops</h3><p>0→1 conversational commerce app and GenAI fashion try-on on lifelike avatars.</p></div>
+<div class="card"><span class="n" style="background:var(--coral)">2025–now</span><h3>AI Mode</h3><p>Agentic commerce: relevance, food, payments and voice-triggered purchase.</p></div>
+</div></div></section>
+
+<section id="tryon" style="background:#fff;border-block:2.5px solid var(--ink)"><div class="wrap reveal">
+<span class="tag">Featured build · StyleDrops</span>
+<h2>Virtual try-on that still looks like you</h2>
+<p class="sub">Static product photos are a discovery blocker: shoppers can't picture the clothes on themselves. StyleDrops generates photorealistic try-ons on lifelike avatars, inside a 0→1 conversational shopping app.</p>
+<div class="pipe">
+<div class="step"><b>01 · INPUT</b><h4>Shopper + garment</h4><p>User photo or avatar plus catalogue item.</p></div>
+<div class="step"><b>02 · MODEL</b><h4>Bake-off</h4><p>Google, ByteDance, Fal.ai, Replicate compared on cost, latency, accuracy.</p></div>
+<div class="step"><b>03 · EVAL</b><h4>Automated evals</h4><p>Catch facial drift and pose mismatch before users do.</p></div>
+<div class="step act"><b>04 · OUTPUT</b><h4>Try-on result</h4><p>Faster, more faithful, cheaper via avatar reuse.</p></div>
+</div>
+<div class="tryrow">
+<div>
+<div class="cmp" id="cmp">
+<div class="layer in" id="inL">INPUT IMAGE<br>(drop yours in the IMG_IN variable)</div>
+<div class="layer out" id="outL">OUTPUT IMAGE<br>(drop yours in the IMG_OUT variable)</div>
+<span class="lab" style="left:12px">INPUT</span><span class="lab" style="right:12px;z-index:4;background:var(--coral)">OUTPUT</span>
+<div class="handle" id="hd"></div>
+</div>
+</div>
+<div>
+<h3 style="font-size:24px;margin-bottom:12px">What I owned</h3>
+<ul style="padding-left:20px;margin-bottom:18px">
+<li><b>Face consistency and pose:</b> designed the engine and its eval pipeline to fix facial drift and pose mismatch. Large gains in both fidelity and latency.</li>
+<li><b>Model selection:</b> automated evals across four providers cut evaluation cycles by an order of magnitude.</li>
+<li><b>Cost vs freshness:</b> a framework for reusing vs regenerating avatars that cut generation cost sharply while keeping personalization fresh.</li>
+<li><b>Shopping agent:</b> Gemini agent with live inventory tool calling replaced a model that kept recommending things that weren't there. Won user preference in A/B tests.</li>
+<li><b>Cold start:</b> catalogue intelligence and failure-mode-aware archetype ranking for zero-history users.</li>
+</ul>
+<div class="chips"><span data-k="a" style="background:var(--sun)">GenAI</span><span data-k="s" style="background:var(--mint)">Evals</span><span data-k="d" style="background:var(--sky)">Tool calling</span><span data-k="f" style="background:var(--coral);color:#fff">Cost / latency</span></div>
+</div>
+</div></div></section>
+
+<section id="work"><div class="wrap reveal">
+<span class="tag">Now shipping</span>
+<h2>AI Mode @ Flipkart</h2>
+<p class="sub">Agentic products inside Flipkart's new AI commerce layer.</p>
+<div class="two">
+<div class="card"><h3>Relevance</h3><p>Better recall and ranking, query rewriting into smarter searches, and deciding which constraints to hold firm on when a query can't be fully met.</p></div>
+<div class="card"><h3>Flipkart Food (0→1)</h3><p>Led market entry. Funnel instrumentation, focus groups and interviews surfaced price ambiguity and intent mismatch as the main friction for mid-affluent Indians.</p></div>
+<div class="card"><h3>Agentic Payments</h3><p>Partnered with NPCI to bring the Unified Agentic Protocol into AI Mode chat: the agent executes UPI payments via tool calling once intent resolves, within configurable guardrails.</p></div>
+<div class="card"><h3>Voice-triggered purchase</h3><p>Full agentic pipeline from voice or text intent, through context-window-aware inventory resolution, to payment on confirmation. Built around a sub-second latency budget.</p></div>
+</div>
+<div class="card soon" style="margin-top:28px"><h3>More case studies loading…</h3><p>Deep-dives coming soon.</p></div>
+</div></section>
+
+<section style="background:#fff;border-block:2.5px solid var(--ink)"><div class="wrap reveal">
+<span class="tag">Earlier chapters</span><h2>Other experiments</h2><div style="height:16px"></div>
+<div class="xp">
+<div class="card"><h3>Promotions &amp; Offers Platform <span style="font-size:15px;opacity:.6">· APM I</span></h3><div class="meta">Flipkart · 2023–24</div><ul><li>Centralized bank agreements, automated eligibility and opt-ins, and allocated burn across sellers, banks and platform with a config-driven system.</li><li>Unified fragmented offer surfaces into a single Net Effective Price and rebalanced burn away from entrenched users with an Either-Or framework.</li></ul></div>
+<div class="card"><h3>Internships</h3><div class="meta">2022–23</div><ul><li><b>i3 Digital Health (Switzerland, oncology SaaS):</b> launched a patient portal and fixed 100+ pain points via structured user testing.</li><li><b>Dr. Reddy's:</b> data science analyst (PPO offered), used Support Vector Regression to improve process productivity and cycle time.</li><li><b>STEPapp / PACE Academy:</b> shipped a PWA MVP in three weeks, tripled daily actives, wrote a ₹200Cr B2G proposal.</li></ul></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap reveal">
+<span class="tag">The periodic table of Mannya</span>
+<h2>Elements I work with</h2>
+<div class="legend"><span><i style="background:var(--violet)"></i>AI / LLM</span><span><i style="background:var(--mint)"></i>Data</span><span><i style="background:var(--sun)"></i>Product</span><span><i style="background:var(--coral)"></i>Domain</span></div>
+<div class="pt" id="pt"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap reveal two">
+<div class="card" style="background:var(--sun)"><span class="tag" style="color:var(--ink)">Awards &amp; leadership</span>
+<ul style="padding-left:20px"><li>2nd runner-up, Graphite GTC No-Code Revolution, 3,000+ participants (Tryst, IIT Delhi 2022)</li><li>Coordinator, Cosmicon: IIT Delhi's first Physics &amp; Astronomy Club fest, 2,500+ participants, 15+ events</li><li>Closed Hero, Decathlon and Red Bull sponsorships for Inter-IIT Sports Meet (23 IITs, 2,000+ athletes)</li></ul></div>
+<div class="card" style="background:var(--mint)"><span class="tag" style="color:var(--ink)">Off the clock</span>
+<ul style="padding-left:20px"><li>Self-taught drummer (yes, the pads above are real)</li><li>Trekking and mountains</li><li>Sports and board games</li></ul></div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+<h2>Let's build something.</h2>
+<a class="btn" href="mailto:mannyaagar@gmail.com">Email</a>
+<a class="btn alt" href="https://linkedin.com/in/mannya-agarwal-ba43b1200" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn alt" href="tel:+917599905710">+91-7599905710</a>
+<a class="btn alt" href="Mannya_Agarwal_Resume.pdf" download>Résumé ↓</a>
+<small>© 2026 Mannya Agarwal · Bengaluru</small>
+</div></footer>
+
+<script>
+// ---- EDIT ME: set image paths for the try-on slider ----
+const IMG_IN = "images/input.jpg";
+const IMG_OUT = "images/output.jpg";
+
+// terminal typing
+const lines=[
+'<span class="c">// about.js</span>',
+'<span class="k">const</span> mannya = {',
+'  role:  <span class="s">"Product Manager, AI Mode"</span>,',
+'  from:  <span class="s">"Chemical Eng, IIT Delhi"</span>,',
+'  ships: [<span class="s">"agents"</span>, <span class="s">"try-ons"</span>, <span class="s">"payments"</span>],',
+'  tempo: <span class="s">"self-taught drummer"</span>,',
+'  bar:   <span class="s">"high on craft"</span>',
+'};<span class="cur"></span>'];
+const t=document.getElementById('term');let i=0;
+(function type(){if(i<lines.length){t.innerHTML+=(i?"\n":"")+lines[i++];setTimeout(type,330)}})();
+
+// marquee
+const items=['0→1 <em>products</em>','agentic <em>AI</em>','evals &amp; <em>failure modes</em>','tool <em>calling</em>','UPI <em>payments</em>','GenAI <em>try-on</em>','♪ <em>120 BPM</em>','chem eng → <em>PM</em>'];
+const h=items.map(x=>`<span>${x}</span>`).join('');
+document.getElementById('strip').innerHTML=h+h;
+
+// periodic table
+const sk=[['Ag','Agentic AI',0],['Pe','Prompt Eng',0],['Ev','Eval Pipelines',0],['Ms','Model Selection',0],['Cw','Context Windows',0],['Tc','Tool Calling',0],['Cl','Cost-Latency-Acc',0],['Rr','Ranking & Recs',0],
+['Sq','SQL',1],['Py','Python',1],['Fa','Funnel Analytics',1],['Co','Cohorts',1],['Ab','A/B Testing',1],['Mt','L0/L1 Metrics',1],
+['Zo','0→1 Strategy',2],['Ur','User Research',2],['Sp','Spec Writing',2],['Ms','Market Sizing',2],['Mo','Moat Analysis',2],['Sc','Scaling',2],['Cc','Claude Code',2],['Gm','Gemini API',2],['Cu','Cursor',2],
+['Ci','Consumer Internet',3],['Fp','Fintech & Pay',3],['Ga','GenAI Apps',3],['Mk','Marketplaces',3],['Ss','SaaS',3]];
+const col=['--violet','--mint','--sun','--coral'];
+document.getElementById('pt').innerHTML=sk.map((s,n)=>`<div class="el" style="background:var(${col[s[2]]});color:${s[2]==0?'#fff':'var(--ink)'}"><small>${n+1}</small><b>${s[0]}</b><span>${s[1]}</span></div>`).join('');
+
+// drum pads (WebAudio synth)
+let ac;
+function hit(k){
+ ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+ const t0=ac.currentTime,g=ac.createGain();g.connect(ac.destination);
+ const tone=(f0,f1,d,v)=>{const o=ac.createOscillator();o.frequency.setValueAtTime(f0,t0);o.frequency.exponentialRampToValueAtTime(f1,t0+d);o.connect(g);g.gain.setValueAtTime(v,t0);g.gain.exponentialRampToValueAtTime(.001,t0+d);o.start(t0);o.stop(t0+d)};
+ const noise=(d,v,hp)=>{const b=ac.createBuffer(1,ac.sampleRate*d,ac.sampleRate),x=b.getChannelData(0);for(let j=0;j<x.length;j++)x[j]=Math.random()*2-1;const s=ac.createBufferSource(),f=ac.createBiquadFilter(),ng=ac.createGain();f.type='highpass';f.frequency.value=hp;s.buffer=b;s.connect(f);f.connect(ng);ng.connect(ac.destination);ng.gain.setValueAtTime(v,t0);ng.gain.exponentialRampToValueAtTime(.001,t0+d);s.start(t0)};
+ if(k=='a')tone(150,40,.35,1);
+ if(k=='s'){tone(200,120,.15,.5);noise(.18,.6,1500)}
+ if(k=='d')noise(.06,.4,7000);
+ if(k=='f')noise(1.2,.5,3000); // crash: long bright noise
+ const p=document.querySelector(`.pad[data-k="${k}"]`);p.classList.add('hit');setTimeout(()=>p.classList.remove('hit'),90);
+}
+document.querySelectorAll('.pad,.chips span').forEach(p=>p.onclick=()=>hit(p.dataset.k));
+addEventListener('keydown',e=>{if('asdf'.includes(e.key)&&e.key.length==1&&!e.repeat)hit(e.key)});
+
+// before/after slider
+const cmp=document.getElementById('cmp'),hd=document.getElementById('hd'),outL=document.getElementById('outL'),inL=document.getElementById('inL');
+if(IMG_IN)inL.innerHTML=`<img src="${IMG_IN}" alt="Input">`;
+if(IMG_OUT)outL.innerHTML=`<img src="${IMG_OUT}" alt="Try-on output">`;
+function setPos(x){const r=cmp.getBoundingClientRect();let p=Math.min(1,Math.max(0,(x-r.left)/r.width))*100;hd.style.left=p+'%';outL.style.clipPath=`inset(0 0 0 ${p}%)`}
+let drag=false;
+cmp.addEventListener('pointerdown',e=>{drag=true;setPos(e.clientX)});
+addEventListener('pointermove',e=>{if(drag)setPos(e.clientX)});
+addEventListener('pointerup',()=>drag=false);
+
+// scroll reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
